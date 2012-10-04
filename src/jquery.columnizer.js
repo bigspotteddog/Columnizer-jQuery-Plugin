@@ -53,6 +53,14 @@
 	    var $inBox = options.target ? $(options.target) : $(this);
 		var maxHeight = $(this).height();
 		var $cache = $('<div></div>'); // this is where we'll put the real content
+
+	    $inBox.data("options", options);
+		$inBox.data("cache", $cache);
+		$inBox.bind("columnize", function() {
+			lastWidth = 0;
+			columnizeIt();
+		});
+
 		var lastWidth = 0;
 		var columnizing = false;
 		var manualBreaks = options.manualBreaks;
