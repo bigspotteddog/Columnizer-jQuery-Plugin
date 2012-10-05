@@ -58,6 +58,7 @@
 		$inBox.data("cache", $cache);
 		$inBox.bind("columnize", function() {
 			lastWidth = 0;
+			$inBox.data("columnized", false);
 			columnizeIt();
 		});
 
